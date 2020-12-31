@@ -1,0 +1,6 @@
+user = vmail
+password = vmaildbpass
+hosts = 127.0.0.1
+dbname = vmail
+query = SELECT (CASE sendonly WHEN true THEN 'REJECT' ELSE 'OK' END) AS access FROM accounts WHERE username = '%u' AND domain = '%d' AND enabled LIMIT 1;
+
